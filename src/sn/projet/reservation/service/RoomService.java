@@ -1,6 +1,10 @@
 package sn.projet.reservation.service;
-import sn.projet.reservation.model.Room;
+import  sn.projet.reservation.model.Room;
 import java.util.List;
+import sn.projet.reservation.model.Room;
+
+import java.util.List;
+import java.util.ArrayList;
 import java.util.Iterator;
 
 public class RoomService {
@@ -63,5 +67,38 @@ public class RoomService {
     public  List<Room> afficherToutesChambres(){
         return DataStore.rooms;
     }
+
+    //Liste des chambre disponible
+
+    public  List<Room> getChambreDisponible(){
+        List<Room> disponibles = new ArrayList<>();
+
+        for(Room r : DataStore.rooms){
+            if(r.getStatut().equals("DISPONIBLE")){
+
+                disponibles.add(r);
+            }
+        }
+        return disponibles;
+    }
+
+    //Rechercher une chambre
+
+    public List<Room> rechercherChmabre(){
+        String type;
+        double  prixMax;
+
+        List<Room> resultat = new ArrayList<>();
+
+        for(Room r : DataStore.rooms){
+            if(r.getType().equalsIgnoreCase(type) && r.getPrix <= prixMax){
+
+                resultat.add(r);
+            }
+        }
+        return resultat;
+
+    }
+
 
 }
