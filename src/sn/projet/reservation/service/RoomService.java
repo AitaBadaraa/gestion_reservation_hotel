@@ -33,7 +33,7 @@ public class RoomService {
 
     //Modifier une chambre
 
-    public  boolean modifierChambre(int numero, String type, double  prix, String statut){
+    public  boolean modifierChambre(int numero, Type type, double  prix, Statut statut){
         Room chambre = chercherChambre(numero);
                 if(chambre == null){
                     return false;
