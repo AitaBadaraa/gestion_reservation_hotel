@@ -104,6 +104,7 @@ public class RoomService {
 
         return disponibles;
     }
+    //Rechercher une chambre
 
     public List<Room> rechercherChambre(Type type, double prixMax){
 
