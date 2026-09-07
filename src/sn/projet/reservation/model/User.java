@@ -44,8 +44,20 @@ public class User {
         return role == Role.CLIENT;
     }
 
+    // Alias anglais utilisés par AuthService
+    public boolean isAdmin() {
+        return estAdmin();
+    }
+
+    public boolean isClient() {
+        return estClient();
+    }
+
+
     @Override
     public String toString() {
         return "Login: " + login + " Role: " + role;
     }
+
+
 }
